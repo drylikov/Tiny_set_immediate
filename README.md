@@ -1,4 +1,4 @@
-# tiny-set-immediate
+# Tiny_set_immediate
 
 A minimal polyfill of setImmediate, for modern browsers using `window.postMessage`, and `MessageChannel` in workers.
 
