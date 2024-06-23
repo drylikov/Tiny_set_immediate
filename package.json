@@ -1,0 +1,70 @@
+{
+  "name": "tiny-set-immediate",
+  "version": "1.0.2",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jquense/tiny-set-immediate.git"
+  },
+  "author": "jquense",
+  "license": "MIT",
+  "scripts": {
+    "build": "4c build src",
+    "format": "4c format src './*'",
+    "lint": "4c lint src './*'",
+    "prepublishOnly": "yarn run build",
+    "release": "4c release",
+    "tdd": "jest --watch",
+    "test": "yarn lint && yarn typecheck && jest",
+    "testonly": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": "@4c/prettier-config",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "yarn 4c lint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "preset": "@4c/jest-preset",
+    "testEnvironment": "jsdom"
+  },
+  "release": {
+    "conventionalCommits": true,
+    "publishDir": "lib"
+  },
+  "devDependencies": {
+    "@4c/babel-preset": "^8.1.1",
+    "@4c/cli": "^2.0.1",
+    "@4c/jest-preset": "^1.4.5",
+    "@4c/prettier-config": "^1.1.0",
+    "@4c/tsconfig": "^0.4.0",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint-config-4catalyzer-jest": "^2.0.4",
+    "eslint-config-4catalyzer-react": "^1.0.3",
+    "eslint-config-4catalyzer-typescript": "^3.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "hookem": "^1.0.6",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.0.1",
+    "typescript": "^4.3.4"
+  }
+}
