@@ -5,7 +5,7 @@ A minimal polyfill of setImmediate, for modern browsers using `window.postMessag
 If the native functions are available they will be returned instead of a polyfill.
 
 ```ts
-import { setImmediate, clearImmediate } from 'tiny-set-immediate';
+import { setImmediate, clearImmediate } from 'Tiny_set_immediate';
 
 const handle = setImmediate(
   (...args) => {
